@@ -1,6 +1,5 @@
 <%= button_to "log out", session_path, method: :delete %>
-<%= link_to "sign up", new_user_path %>
-<%= link_to "log in", new_session_path %>
+<%= link_to "log in", new_user_path %>
 <%# <%= link_to "log in", new_session_path %> %>
 
 <% if user_signed_in? %>
