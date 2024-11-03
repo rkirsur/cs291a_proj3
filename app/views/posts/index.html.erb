@@ -15,7 +15,7 @@
     <li>
       <div>content: <%= post.content %></div>
       <div>author: <%= post.author %></div>
-      <div>comments: <%= link_to post.comments, post %></div>
+      <div>comments: <%= link_to post.count, post %></div>
       <div>last updated: <%= post.updated_at %></div>
     </li>
   <% end %>
