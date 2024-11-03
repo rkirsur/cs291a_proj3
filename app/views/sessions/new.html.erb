@@ -1,0 +1,12 @@
+<h1>Log in</h1>
+
+<%= form_with model: @user, url: user_path do |form| %>
+    <div>
+        <%= form.label :username %><br>
+        <%= form.text_field :username %>
+    </div>
+
+    <div>
+        <%= form.submit "Log in" %>
+    </div>
+<% end %>
