@@ -4,7 +4,19 @@
 <%# <%= link_to "log in", new_session_path %> %>
 
 <% if user_signed_in? %>
-<p>signed in<p>
+    <p>signed in<p>
+    <%= current_user.username %>
 <% end %>
 
 <h1>posts</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <div>content: <%= post.content %></div>
+      <div>author: <%= post.author %></div>
+      <div>comments: <%= link_to post.comments, post %></div>
+      <div>last updated: <%= post.updated_at %></div>
+    </li>
+  <% end %>
+</ul>
