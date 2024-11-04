@@ -1,14 +1,10 @@
-<%= button_to "log out", session_path, method: :delete %>
-<%# <%= link_to "log in", "/login" %> %>
-<%# <%= link_to "log out", "/logout" %> %>
-<%# <%= link_to "log in", new_session_path %> %>
+<%= button_to "Log out", session_path, method: :delete %>
 
 <% if user_signed_in? %>
-    <p>signed in<p>
-    <%= current_user.username %>
+    <p>Signed in as: <%= current_user.username %><p>
 <% end %>
 
-<h1>posts</h1>
+<h1>Posts</h1>
 
 <ul>
   <% @posts.each do |post| %>
@@ -18,6 +14,7 @@
       <div>comments: <%= link_to post.count, post %></div>
       <div>last updated: <%= post.updated_at %></div>
     </li>
+    <p></p>
   <% end %>
 </ul>
 
