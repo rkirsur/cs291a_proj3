@@ -8,10 +8,16 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    if !user_signed_in?
+      redirect_to "/login"
+    end
   end
 
   def new
     @post = Post.new
+    if !user_signed_in?
+      redirect_to "/login"
+    end
   end
 
   def create
